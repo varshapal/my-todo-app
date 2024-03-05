@@ -5,15 +5,14 @@ const TodoList = (props) => {
 
     const deleteTodo = async (todoId) => {
         console.log("id", todoId);
-        
-            // const response = fetch(`/api/delete-todo?todoId=${todoId}`, {
-            //     method: 'DELETE',
-            // } );
-            // const data = await response.json;
-            // console.log(data);
-            // console.log("deleted");
 
-            props.onDeleteTodo(todoId);
+        props.onDeleteTodo(todoId);
+    }
+
+    const editTodo = async (todoId) => {
+        console.log("id", todoId);
+
+        props.onEditTodo(todoId);
     }
     
     
@@ -29,6 +28,7 @@ const TodoList = (props) => {
                 <li key={todo.id}>
                     {todo.title}
                     <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+                    <button onClick={() => editTodo(todo.id)}>Edit</button>
                 </li>
             ))}
         </ul>

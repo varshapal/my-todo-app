@@ -18,8 +18,8 @@ const HomePage = (props) => {
         console.log(data);
     }
 
-    const editTodoHandler = async(id) => {
-        const response = await fetch(`/api/new-todo/${id}`, {
+    const editTodoHandler = async(todoId) => {
+        const response = await fetch(`/api/edit-todo?todoId=${todoId}`, {
             method: 'PUT',
             body: JSON.stringify({
                 title: props.title,
@@ -47,7 +47,7 @@ const HomePage = (props) => {
     return(
         <Fragment>
             <Todo onAddTodo={addTodoHandler}/>
-            <TodoList todos={props.todos} onDeleteTodo={deleteTodoHandler}/>
+            <TodoList todos={props.todos} onDeleteTodo={deleteTodoHandler} onEditTodo={editTodoHandler}/>
         </Fragment>
         
     )

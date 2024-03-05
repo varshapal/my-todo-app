@@ -15,7 +15,7 @@ export default async function handler(req, res) {
     const db = client.db();
 
     const todosCollection = db.collection('todos');
-    console.log("mongodb connection establish");
+    
 
     // Delete the todo
     const result = await todosCollection.deleteOne({ _id: ObjectId(todoId) });

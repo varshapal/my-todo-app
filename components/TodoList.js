@@ -26,7 +26,7 @@ const TodoList = (props) => {
                 //     title={todo.title}
                 // />
                 <li key={todo.id}>
-                    {todo.title}
+                    { todo.status === 'complete' && todo.title}
                     <button onClick={() => deleteTodo(todo.id)}>Delete</button>
                     <button onClick={() => editTodo(todo.id)}>Edit</button>
                 </li>

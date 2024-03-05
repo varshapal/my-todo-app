@@ -19,7 +19,7 @@ const HomePage = (props) => {
     }
 
     const editTodoHandler = async(todoId) => {
-        const response = await fetch(`/api/edit-todo?todoId=${todoId}`, {
+        const response = await fetch(`/api/edit-todo/${todoId}`, {
             method: 'PUT',
             body: JSON.stringify({
                 title: props.title,
@@ -55,7 +55,7 @@ const HomePage = (props) => {
 
 export const getStaticProps = async () => {
     //fetch data from API
-    const client = await MongoClient.connect('mongodb+srv://varsha25pal:oJmm3u0dBtHGSj3q@cluster0.ovpoxp1.mongodb.net/mytodos?retryWrites=true&w=majority&appName=Cluster0');
+    const client = await MongoClient.connect('mongodb+srv://varsha25pal:xqkeEkbJiuqIl1rE@cluster0.ovpoxp1.mongodb.net/mytodos?retryWrites=true&w=majority&appName=Cluster0');
         const db = client.db();
 
         const todosCollection = db.collection('todos');

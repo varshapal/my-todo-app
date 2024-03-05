@@ -8,7 +8,7 @@ const handler = async(req, res) => {
     if(req.method === 'POST') {
         const data = req.body;
 
-        const client = await MongoClient.connect('mongodb+srv://varsha25pal:o8PCAfVGeyWk8u4W@cluster0.ovpoxp1.mongodb.net/mytodos?retryWrites=true&w=majority&appName=Cluster0');
+        const client = await MongoClient.connect('mongodb+srv://varsha25pal:xqkeEkbJiuqIl1rE@cluster0.ovpoxp1.mongodb.net/mytodos?retryWrites=true&w=majority&appName=Cluster0');
         const db = client.db();
 
         const todosCollection = db.collection('todos');
